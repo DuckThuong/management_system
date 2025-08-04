@@ -2,7 +2,7 @@ import React from "react";
 import { Route, Routes } from "react-router";
 import { ROUTER_PATH } from "./routers";
 import { Login } from "../layout/LoginAndReset/Login/login";
-import { SuspenseWrapper } from "../SuspenseWrapper";
+import { SuspenseWrapper } from "../suspenseWrapper";
 
 export const WebRouter = () => (
   <Routes>

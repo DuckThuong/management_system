@@ -3,7 +3,7 @@ import { random } from "lodash";
 import { Suspense } from "react";
 import RequireAuth from "./requiredAuth";
 
-export const SuspenseWrapper = (props) => {
+export const SuspenseWrapper = (props: any) => {
   return (
     <RequireAuth>
       <Suspense
