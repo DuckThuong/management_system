@@ -1,0 +1,96 @@
+@import "../../../color.scss";
+.login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: $text_color_2;
+  &_form {
+    border: 1px solid $black_color !important;
+    width: 400px;
+    min-height: 500px;
+    height: fit-content;
+    padding: 32px 24px;
+    border-radius: 24px;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
+    &-header {
+      h1 {
+        text-align: center;
+        margin-bottom: 24px;
+        font-family: $font_family_1;
+        color: $text_color_1 !important;
+      }
+    }
+    &-input {
+      height: 50px;
+      border-radius: 8px;
+      border: 1px solid $black_color !important;
+      font-family: $font_family_1;
+      font-size: 16px;
+      line-height: 24px;
+      color: $text_color_1 !important;
+    }
+    &-item {
+      margin-bottom: 24px !important;
+      height: fit-content;
+      min-height: 64px;
+      label {
+        color: $text_color_1 !important;
+        font-family: $font_family_1;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 24px;
+      }
+    }
+    &-text {
+      &-or {
+        margin-top: 24px;
+        text-align: center;
+        font-family: $font_family_1;
+        font-weight: 300;
+        font-size: 16px;
+        text-decoration: wavy solid $primary_color;
+        line-height: 24px;
+        color: $text_color_1 !important;
+        margin-bottom: 24px;
+      }
+    }
+    &-button {
+      width: 100%;
+      height: 40px;
+      margin-top: 24px;
+      border-radius: 8px;
+      background-color: $primary_color;
+      color: $white_color !important;
+      font-family: $font_family_1;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 24px;
+      &:hover {
+        background-color: darken($primary_color, 10%);
+        border: 2px solid $primary_color !important;
+        color: $primary_color !important;
+      }
+
+      &:focus {
+        background-color: darken($primary_color, 10%);
+        border: 2px solid $primary_color !important;
+        color: $primary_color !important;
+      }
+
+      &-google {
+        border: none !important;
+        background-color: unset !important;
+        box-shadow: none !important;
+      }
+    }
+
+    &-option {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
