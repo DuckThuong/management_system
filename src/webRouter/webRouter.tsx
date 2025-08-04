@@ -4,7 +4,7 @@ import { ROUTER_PATH } from "./routers";
 import { Login } from "../layout/LoginAndRegister/Login/login";
 import { SuspenseWrapper } from "../SuspenseWrapper";
 
-export const WebRouter = () => {
+export const WebRouter = () => (
   <Routes>
     {/* Login */}
     <Route
@@ -17,5 +17,5 @@ export const WebRouter = () => {
       element={<SuspenseWrapper component={<Login />} />}
     ></Route>
     {/* Add more routes as needed */}
-  </Routes>;
-};
+  </Routes>
+);
