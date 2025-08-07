@@ -5,7 +5,9 @@ import "./login.scss";
 export const Login = () => {
   const navigate = useNavigate();
   const [form] = Form.useForm();
-  const doLogin = () => {};
+  const doLogin = () => {
+    navigate();
+  };
   const doResetPassword = () => {};
   return (
     <div className="login">
