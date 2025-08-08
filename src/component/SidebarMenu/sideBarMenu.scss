@@ -1,17 +1,22 @@
 .sideBarMenu {
   .sideBarMenu__sider {
     background: #223047 !important;
-    .ant-menu {
-      background: transparent !important;
+
+    &.ant-layout-sider-collapsed {
+      .ant-menu {
+        background: #223047 !important;
+      }
     }
+
     .ant-menu-item,
     .ant-menu-submenu-title {
       font-size: 16px;
-      padding-left: 24px !important;
     }
+
     .ant-menu-item-selected {
       background: #1a2233 !important;
     }
+
     .sideBarMenu__logo {
       background: #fff;
       border-radius: 6px;

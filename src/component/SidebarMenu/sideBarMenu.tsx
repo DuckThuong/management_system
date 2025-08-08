@@ -9,9 +9,12 @@ import {
   SettingOutlined,
   TeamOutlined,
   FileTextOutlined,
+  UnorderedListOutlined,
+  AlignLeftOutlined,
 } from "@ant-design/icons";
 import "./sideBarMenu.scss";
 import SubMenu from "antd/lib/menu/SubMenu";
+import { SvgHome } from "../../@svg/home";
 
 const { Header, Sider, Content } = Layout;
 
@@ -59,19 +62,23 @@ export const SideBarMenu = () => {
           }}
         />
         <Menu theme="dark" mode="inline" defaultSelectedKeys={["1"]}>
-          <Menu.Item key="1" icon={<DashboardOutlined />}>
+          <Menu.Item key="1" icon={<SvgHome />}>
             Trang chủ
           </Menu.Item>
-          <SubMenu key="2" icon={<TeamOutlined />} title="Danh sách yêu cầu">
+          <SubMenu
+            key="2"
+            icon={<UnorderedListOutlined />}
+            title="Danh sách yêu cầu"
+          >
             <Menu.Item key="2-1">Yêu cầu chờ duyệt</Menu.Item>
             <Menu.Item key="2-2">Yêu cầu đã duyệt</Menu.Item>
             <Menu.Item key="2-3">Yêu cầu bị từ chối</Menu.Item>
           </SubMenu>
-          <SubMenu key="3" icon={<SettingOutlined />} title="Yêu cầu của tôi">
+          <SubMenu key="3" icon={<AlignLeftOutlined />} title="Yêu cầu của tôi">
             <Menu.Item key="3-1">Tạo yêu cầu mới</Menu.Item>
             <Menu.Item key="3-2">Lịch sử yêu cầu</Menu.Item>
           </SubMenu>
-          <SubMenu key="4" icon={<FileTextOutlined />} title="Cài đặt">
+          <SubMenu key="4" icon={<SettingOutlined />} title="Cài đặt">
             <Menu.Item key="4-1">Thông tin cá nhân</Menu.Item>
             <Menu.Item key="4-2">Đổi mật khẩu</Menu.Item>
           </SubMenu>
