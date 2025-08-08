@@ -61,11 +61,21 @@ export const SideBarMenu = () => {
             borderRadius: 6,
           }}
         />
-        <Menu theme="dark" mode="inline" defaultSelectedKeys={["1"]}>
-          <Menu.Item key="1" icon={<SvgHome />}>
+        <Menu
+          className="sideBarMenu__menu"
+          theme="dark"
+          mode="inline"
+          defaultSelectedKeys={["1"]}
+        >
+          <Menu.Item
+            className="sideBarMenu__menu-item"
+            key="1"
+            icon={<SvgHome />}
+          >
             Trang chủ
           </Menu.Item>
           <SubMenu
+            className="sideBarMenu__menu-subItem"
             key="2"
             icon={<UnorderedListOutlined />}
             title="Danh sách yêu cầu"
