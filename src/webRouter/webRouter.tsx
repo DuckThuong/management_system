@@ -3,7 +3,7 @@ import { Route, Routes } from "react-router";
 import { ROUTER_PATH } from "./routers";
 import { Login } from "../layout/LoginAndReset/Login/login";
 import { SuspenseWrapper } from "../suspenseWrapper";
-import { Home } from "../layout/Home/HomeMainContainer/home";
+import { Home } from "../layout/Home/home";
 
 export const WebRouter = () => (
   <Routes>
