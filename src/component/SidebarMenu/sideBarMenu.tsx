@@ -1,20 +1,17 @@
-import React, { useState } from "react";
-import { Layout, Menu, Button, Avatar, Badge, Dropdown } from "antd";
 import {
-  MenuUnfoldOutlined,
-  MenuFoldOutlined,
-  BellOutlined,
-  UserOutlined,
-  DashboardOutlined,
-  SettingOutlined,
-  TeamOutlined,
-  FileTextOutlined,
-  UnorderedListOutlined,
   AlignLeftOutlined,
+  BellOutlined,
+  MenuFoldOutlined,
+  MenuUnfoldOutlined,
+  SettingOutlined,
+  UnorderedListOutlined,
+  UserOutlined,
 } from "@ant-design/icons";
-import "./sideBarMenu.scss";
+import { Avatar, Badge, Button, Dropdown, Layout, Menu } from "antd";
 import SubMenu from "antd/lib/menu/SubMenu";
+import { useState } from "react";
 import { SvgHome } from "../../@svg/home";
+import "./sideBarMenu.scss";
 
 const { Header, Sider, Content } = Layout;
 
@@ -80,17 +77,41 @@ export const SideBarMenu = () => {
             icon={<UnorderedListOutlined />}
             title="Danh sách yêu cầu"
           >
-            <Menu.Item key="2-1">Yêu cầu chờ duyệt</Menu.Item>
-            <Menu.Item key="2-2">Yêu cầu đã duyệt</Menu.Item>
-            <Menu.Item key="2-3">Yêu cầu bị từ chối</Menu.Item>
+            <Menu.Item className="sideBarMenu__menu-subItem-item" key="2-1">
+              Yêu cầu chờ duyệt
+            </Menu.Item>
+            <Menu.Item className="sideBarMenu__menu-subItem-item" key="2-2">
+              Yêu cầu đã duyệt
+            </Menu.Item>
+            <Menu.Item className="sideBarMenu__menu-subItem-item" key="2-3">
+              Yêu cầu bị từ chối
+            </Menu.Item>
           </SubMenu>
-          <SubMenu key="3" icon={<AlignLeftOutlined />} title="Yêu cầu của tôi">
-            <Menu.Item key="3-1">Tạo yêu cầu mới</Menu.Item>
-            <Menu.Item key="3-2">Lịch sử yêu cầu</Menu.Item>
+          <SubMenu
+            className="sideBarMenu__menu-subItem"
+            key="3"
+            icon={<AlignLeftOutlined />}
+            title="Yêu cầu của tôi"
+          >
+            <Menu.Item className="sideBarMenu__menu-subItem-item" key="3-1">
+              Tạo yêu cầu mới
+            </Menu.Item>
+            <Menu.Item className="sideBarMenu__menu-subItem-item" key="3-2">
+              Lịch sử yêu cầu
+            </Menu.Item>
           </SubMenu>
-          <SubMenu key="4" icon={<SettingOutlined />} title="Cài đặt">
-            <Menu.Item key="4-1">Thông tin cá nhân</Menu.Item>
-            <Menu.Item key="4-2">Đổi mật khẩu</Menu.Item>
+          <SubMenu
+            className="sideBarMenu__menu-subItem"
+            key="4"
+            icon={<SettingOutlined />}
+            title="Cài đặt"
+          >
+            <Menu.Item className="sideBarMenu__menu-subItem-item" key="4-1">
+              Thông tin cá nhân
+            </Menu.Item>
+            <Menu.Item className="sideBarMenu__menu-subItem-item" key="4-2">
+              Đổi mật khẩu
+            </Menu.Item>
           </SubMenu>
         </Menu>
       </Sider>
