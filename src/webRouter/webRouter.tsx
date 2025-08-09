@@ -1,9 +1,9 @@
-import React from "react";
 import { Route, Routes } from "react-router";
-import { ROUTER_PATH } from "./routers";
+import { HomeTicket } from "../layout/Home/HomeTicket/homeTicket";
 import { Login } from "../layout/LoginAndReset/Login/login";
 import { SuspenseWrapper } from "../suspenseWrapper";
-import { Home } from "../layout/Home/home";
+import { ROUTER_PATH } from "./routers";
+import { TicketType } from "./../properties/type";
 
 export const WebRouter = () => (
   <Routes>
@@ -14,9 +14,15 @@ export const WebRouter = () => (
     ></Route>
 
     {/* Home */}
-    <Route
+    {/* <Route
       path={ROUTER_PATH.HOME}
       element={<SuspenseWrapper component={<Home />} />}
+    ></Route> */}
+    <Route
+      path={ROUTER_PATH.HOME}
+      element={
+        <SuspenseWrapper component={<HomeTicket tiketType={1 as any} />} />
+      }
     ></Route>
   </Routes>
 );

@@ -3,4 +3,5 @@ export interface TicketType {
   APPROVED: 2;
   REJECTED: 3;
   MY_REQUEST: 4;
+  ALL: 5;
 }
