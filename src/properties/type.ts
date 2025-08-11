@@ -1,7 +1,7 @@
-export interface TicketType {
-  PENDING: 1;
-  APPROVED: 2;
-  REJECTED: 3;
-  MY_REQUEST: 4;
-  ALL: 5;
+export enum TicketType {
+  Pending = "Pending",
+  Approved = "Approved",
+  Rejected = "Rejected",
+  MyRequest = "My Request",
+  All = "All",
 }

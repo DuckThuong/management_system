@@ -3,9 +3,10 @@ import { TicketType } from "../../../properties/type";
 import "./homeTicket.scss";
 
 interface HomeTicketProps {
-  tiketType: TicketType;
+  status: TicketType;
 }
-export const HomeTicket = ({ tiketType }: HomeTicketProps) => {
+
+export const HomeTicket: React.FC<HomeTicketProps> = ({ status }) => {
   const [form] = Form.useForm();
 
   const handleSubmit = (values: any) => {

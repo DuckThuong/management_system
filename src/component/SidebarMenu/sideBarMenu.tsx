@@ -13,6 +13,8 @@ import { useState } from "react";
 import { SvgHome } from "../../@svg/home";
 import { HomeDashboard } from "../../layout/Home/HomeDashboard/homeDashBoard";
 import "./sideBarMenu.scss";
+import { HomeTicket } from "../../layout/Home/HomeTicket/homeTicket";
+import { TicketType } from "./../../properties/type";
 
 const { Header, Sider, Content } = Layout;
 
@@ -43,12 +45,17 @@ export const SideBarMenu = () => {
     </Menu>
   );
 
-  // Hàm render nội dung theo key
   const renderContent = () => {
     switch (selectedKey) {
       case "1":
         return <HomeDashboard />;
-      // case "2-1": return <ComponentKhac />;
+      case "2-1":
+        return <HomeTicket status={TicketType.Pending} />;
+      case "2-2":
+        return <HomeTicket status={TicketType.Pending} />;
+      case "2-3":
+        return <HomeTicket status={TicketType.Pending} />;
+
       default:
         return <div>Hiển thị nội dung item ở đây</div>;
     }
