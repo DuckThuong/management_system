@@ -11,12 +11,14 @@ import { Avatar, Badge, Button, Dropdown, Layout, Menu } from "antd";
 import SubMenu from "antd/lib/menu/SubMenu";
 import { useState } from "react";
 import { SvgHome } from "../../@svg/home";
+import { HomeDashboard } from "../../layout/Home/HomeDashboard/homeDashBoard";
 import "./sideBarMenu.scss";
 
 const { Header, Sider, Content } = Layout;
 
 export const SideBarMenu = () => {
   const [collapsed, setCollapsed] = useState(false);
+  const [selectedKey, setSelectedKey] = useState("1"); // Thêm state này
 
   const userMenu = (
     <Menu>
@@ -41,6 +43,17 @@ export const SideBarMenu = () => {
     </Menu>
   );
 
+  // Hàm render nội dung theo key
+  const renderContent = () => {
+    switch (selectedKey) {
+      case "1":
+        return <HomeDashboard />;
+      // case "2-1": return <ComponentKhac />;
+      default:
+        return <div>Hiển thị nội dung item ở đây</div>;
+    }
+  };
+
   return (
     <Layout style={{ minHeight: "100vh" }} className="sideBarMenu">
       <Sider
@@ -63,6 +76,8 @@ export const SideBarMenu = () => {
           theme="dark"
           mode="inline"
           defaultSelectedKeys={["1"]}
+          selectedKeys={[selectedKey]}
+          onClick={({ key }) => setSelectedKey(key)} // Thêm dòng này
         >
           <Menu.Item
             className="sideBarMenu__menu-item"
@@ -145,9 +160,7 @@ export const SideBarMenu = () => {
             </Dropdown>
           </div>
         </Header>
-        <Content className="sideBarMenu__content">
-          Hiển thị nội dung item ở đây
-        </Content>
+        <Content className="sideBarMenu__content">{renderContent()}</Content>
       </Layout>
     </Layout>
   );
