@@ -199,6 +199,7 @@ export const HomeTicket: React.FC<HomeTicketProps> = ({ status }) => {
         onOk={handleFilterOk}
         onCancel={handleFilterCancel}
         footer={null}
+        className="home-ticket__filter-modal"
       >
         <Form layout="vertical">
           <Form.Item label="Dự án/Ứng dụng" name="project">
