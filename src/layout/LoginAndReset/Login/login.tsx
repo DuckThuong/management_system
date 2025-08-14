@@ -1,11 +1,14 @@
 import { Button, Form, Input } from "antd";
 import { useNavigate } from "react-router-dom";
 import "./login.scss";
+import { ROUTER_PATH } from "../../../webRouter/routers";
 
 export const Login = () => {
   const navigate = useNavigate();
   const [form] = Form.useForm();
-  const doLogin = () => {};
+  const doLogin = () => {
+    navigate(ROUTER_PATH.HOME);
+  };
   const doResetPassword = () => {};
   return (
     <div className="login">
