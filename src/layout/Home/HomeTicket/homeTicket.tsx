@@ -1,15 +1,22 @@
-import { Button, Form, Input, Row, Table, Modal, Select } from "antd";
+import { Button, Form, Input, Modal, Row, Select, Table } from "antd";
+import React from "react";
 import { LinkLine } from "../../../component/LinkLine/linkLine";
 import { TicketType } from "../../../properties/type";
-import { ROUTER_PATH } from "../../../webRouter/routers";
 import "./homeTicket.scss";
-import React from "react";
 
 interface HomeTicketProps {
   status: TicketType;
+  tabKey: string;
+  tabName: string;
+  onChangeTab: (tab: string) => void;
 }
 
-export const HomeTicket: React.FC<HomeTicketProps> = ({ status }) => {
+export const HomeTicket: React.FC<HomeTicketProps> = ({
+  status,
+  tabKey,
+  tabName,
+  onChangeTab,
+}) => {
   const [form] = Form.useForm();
   const [isFilterVisible, setIsFilterVisible] = React.useState(false);
 
@@ -136,11 +143,14 @@ export const HomeTicket: React.FC<HomeTicketProps> = ({ status }) => {
         <Row className="home-ticket__row-1">
           <div className="home-ticket__row-line">
             <LinkLine
+              onClick={(item) => {
+                onChangeTab(item.key);
+              }}
               items={[
-                { name: "Home", url: ROUTER_PATH.HOME },
+                { name: "Home", key: "1" },
                 {
-                  name: "Danh sách đơn hỗ trợ",
-                  url: ROUTER_PATH.HOME,
+                  name: tabName,
+                  key: tabKey,
                 },
               ]}
             />

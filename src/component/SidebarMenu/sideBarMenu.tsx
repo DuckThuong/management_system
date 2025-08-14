@@ -15,6 +15,7 @@ import { HomeDashboard } from "../../layout/Home/HomeDashboard/homeDashBoard";
 import "./sideBarMenu.scss";
 import { HomeTicket } from "../../layout/Home/HomeTicket/homeTicket";
 import { TicketType } from "./../../properties/type";
+import { tab } from "@testing-library/user-event/dist/tab";
 
 const { Header, Sider, Content } = Layout;
 
@@ -45,16 +46,47 @@ export const SideBarMenu = () => {
     </Menu>
   );
 
+  const handlerTabClick = (key: string) => {
+    setSelectedKey(key);
+  };
+
   const renderContent = () => {
     switch (selectedKey) {
       case "1":
         return <HomeDashboard />;
       case "2-1":
-        return <HomeTicket status={TicketType.Pending} />;
+        return (
+          <HomeTicket
+            onChangeTab={(e) => {
+              handlerTabClick(e);
+            }}
+            tabKey="2-1"
+            tabName="Yêu cầu chờ duyệt"
+            status={TicketType.Pending}
+          />
+        );
       case "2-2":
-        return <HomeTicket status={TicketType.Pending} />;
+        return (
+          <HomeTicket
+            onChangeTab={(e) => {
+              handlerTabClick(e);
+            }}
+            tabKey="2-2"
+            tabName="Yêu cầu đã duyệt"
+            status={TicketType.Approved}
+          />
+        );
       case "2-3":
-        return <HomeTicket status={TicketType.Pending} />;
+        return (
+          <HomeTicket
+            onChangeTab={(e) => {
+              handlerTabClick(e);
+            }}
+            tabKey="2-3"
+            tabName="Yêu cầu bị từ chối"
+            status={TicketType.Rejected}
+          />
+        );
 
       default:
         return <div>Hiển thị nội dung item ở đây</div>;
