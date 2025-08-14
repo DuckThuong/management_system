@@ -20,7 +20,7 @@ const { Header, Sider, Content } = Layout;
 
 export const SideBarMenu = () => {
   const [collapsed, setCollapsed] = useState(false);
-  const [selectedKey, setSelectedKey] = useState("1"); // Thêm state này
+  const [selectedKey, setSelectedKey] = useState("1");
 
   const userMenu = (
     <Menu>
