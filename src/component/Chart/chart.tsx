@@ -35,7 +35,6 @@ export const ChartComponent: React.FC<ChartProps> = ({
         ? { radius: [4, 4, 0, 0] }
         : { radius: [0, 4, 4, 0] },
   };
-  console.log(color, "color");
   const finalConfig = { ...defaultConfig, ...options };
 
   return (
